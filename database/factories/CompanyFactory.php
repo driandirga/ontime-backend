@@ -14,10 +14,12 @@ class CompanyFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->company(),
+            'logo' => $this->faker->imageUrl(),
+            'user_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

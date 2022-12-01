@@ -14,10 +14,12 @@ class TeamFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->jobTitle(),
+            'icon' => $this->faker->imageUrl(),
+            'company_id'=>$this->faker->numberBetween(1,3),
         ];
     }
 }

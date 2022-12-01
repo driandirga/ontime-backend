@@ -25,8 +25,8 @@ return new class extends Migration
             $table->bigInteger('role_id')->unsigned();
             $table->boolean('is_verified')->default(false);
             $table->timestamp('verified_at');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

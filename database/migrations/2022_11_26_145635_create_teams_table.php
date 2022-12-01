@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('icon');
             $table->bigInteger('company_id')->unsigned();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

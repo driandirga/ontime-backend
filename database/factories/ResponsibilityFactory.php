@@ -14,10 +14,11 @@ class ResponsibilityFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence(),
+            'role_id'=>$this->faker->numberBetween(1,30),
         ];
     }
 }

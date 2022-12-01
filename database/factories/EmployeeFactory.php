@@ -17,7 +17,14 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->freeEmail(),
+            'phone' => $this->faker->unique()->phoneNumber(),
+            'gender' => $this->faker->randomElement(['MALE','FEMALE']),
+            'age' => $this->faker->numberBetween(17,45),
+            'photo' => $this->faker->imageUrl(),
+            'team_id' => $this->faker->numberBetween(1,30),
+            'role_id' => $this->faker->numberBetween(1,30),
         ];
     }
 }

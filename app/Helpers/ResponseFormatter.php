@@ -12,23 +12,22 @@ class ResponseFormatter
             'status' => 'success',
             'message' => null,
         ],
-        'data' => null,
+        'result' => null,
     ];
 
     public static function success($data = null, $message = null): JsonResponse
     {
         self::$response['meta']['message'] = $message;
-        self::$response['data'] = $data;
+        self::$response['result'] = $data;
 
         return response()->json(self::$response, self::$response['meta']['code']);
     }
 
-    public static function error($data = null, $message = null, $code = 400): JsonResponse
+    public static function error($message = null, $code = 400): JsonResponse
     {
         self::$response['meta']['status'] = 'error';
         self::$response['meta']['code'] = $code;
         self::$response['meta']['message'] = $message;
-        self::$response['data'] = $data;
 
         return response()->json(self::$response, self::$response['meta']['code']);
     }

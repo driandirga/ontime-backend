@@ -12,8 +12,8 @@ class ResponsibilitySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        //
+        \App\Models\Responsibility::factory(30)->create();
     }
 }
