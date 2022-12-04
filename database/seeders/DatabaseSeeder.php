@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
          ]);
 
          $this->call(CompanySeeder::class);
+         $this->call(CompanyUserSeeder::class);
          $this->call(TeamSeeder::class);
          $this->call(RoleSeeder::class);
          $this->call(ResponsibilitySeeder::class);
