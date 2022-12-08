@@ -16,7 +16,7 @@ class CompanyUserSeeder extends Seeder
     public function run(): void
     {
 //        \App\Models\CompanyUser::factory(3)->create();
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             DB::table('company_user')->insert([
                 'user_id' => rand(1, 10),
                 'company_id' => rand(1, 3),
