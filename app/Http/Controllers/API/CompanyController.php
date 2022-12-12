@@ -17,7 +17,7 @@ class CompanyController extends Controller
 {
     public function fetch(Request $request): JsonResponse
     {
-        // Get params
+        // Get input request
         $id = $request->input('id');
         $name = $request->input('name');
         $limit = $request->input('limit', 10);
