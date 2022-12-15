@@ -19,13 +19,14 @@ class RoleController extends Controller
         $id = $request->input('id');
         $name = $request->input('name');
         $limit = $request->input('limit', 10);
+        $with_responsibilities = $request->input('with_responsibilities', false);
 
         // Get role
         $roleQuery = Role::query();
 
         // Get single data
         if ($id) {
-            $role = $roleQuery->find($id);
+            $role = $roleQuery->with('responsibilities')->find($id);
             // Check response
             if ($role) {
                 return ResponseFormatter::success($role, 'Role found');
@@ -37,6 +38,10 @@ class RoleController extends Controller
         $roles = $roleQuery->where('company_id', $request->input('company_id'));
         if ($name) {
             $roles->where('name', 'like', '%' . $name . '%');
+        }
+
+        if ($with_responsibilities) {
+            $roles->with('responsibilities');
         }
 
         // Response success

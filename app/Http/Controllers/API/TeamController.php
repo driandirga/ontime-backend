@@ -64,7 +64,7 @@ class TeamController extends Controller
                 'company_id' => $request->input('company_id'),
             ]);
 
-            // Check if company exists
+            // Check if team exists
             if (!$team) {
                 throw new Exception('Team not created');
             }
